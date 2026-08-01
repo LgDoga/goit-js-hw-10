@@ -17,83 +17,33 @@
 @import url('./back-link.css');
 @import url('./footer.css');
 
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  list-style: none;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding: 24px;
-  background-color: #fff;
-}
-
-.gallery-item {
-  width: 360px;
-  overflow: hidden;
-}
-
-.gallery-link {
-  display: block;
-}
-
-.gallery-image {
-  display: block;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-  transform: scale(1.044);
-  /* ≈ 376×208 з макету */
-}
-
-
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 360px;
-  padding: 32px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.feedback-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2e2f42;
-}
-
-.feedback-form input,
-.feedback-form textarea {
+#datetime-picker {
   font: inherit;
-  padding: 10px 12px;
+  font-size: 16px;
+  padding: 10px 14px;
+  width: 220px;
+  text-align: center;
   border: 1px solid #d0d1e0;
   border-radius: 8px;
-  resize: vertical;
   outline: none;
-  transition: border-color 0.2s ease;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.feedback-form input:focus,
-.feedback-form textarea:focus {
+#datetime-picker:focus {
   border-color: #4e75ff;
 }
 
-.feedback-form button {
-  align-self: flex-start;
-  padding: 10px 24px;
+#datetime-picker:disabled {
+  background-color: #eceef5;
+  cursor: not-allowed;
+}
+
+button[data-start] {
   font: inherit;
   font-weight: 600;
+  font-size: 16px;
+  padding: 10px 32px;
   color: #fff;
   background-color: #4e75ff;
   border: none;
@@ -102,6 +52,113 @@
   transition: background-color 0.2s ease;
 }
 
-.feedback-form button:hover {
+button[data-start]:hover:not(:disabled) {
   background-color: #3a5ce0;
 }
+
+button[data-start]:disabled {
+  background-color: #c2cbe8;
+  cursor: not-allowed;
+}
+
+.timer {
+  display: flex;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 88px;
+  padding: 16px 0;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2e2f42;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  font-size: 13px;
+  color: #8a8ba3;
+}
+
+ .form {
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
+   width: 320px;
+   padding: 32px;
+   background-color: #fff;
+   border-radius: 12px;
+   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+ }
+
+ .form label {
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+   font-size: 14px;
+   font-weight: 500;
+   color: #2e2f42;
+ }
+
+ .form input[type='number'] {
+   font: inherit;
+   padding: 10px 12px;
+   border: 1px solid #d0d1e0;
+   border-radius: 8px;
+   outline: none;
+   transition: border-color 0.2s ease;
+ }
+
+ .form input[type='number']:focus {
+   border-color: #4e75ff;
+ }
+
+ .form fieldset {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   padding: 12px 14px;
+   border: 1px solid #d0d1e0;
+   border-radius: 8px;
+ }
+
+ .form fieldset legend {
+   padding: 0 4px;
+   font-size: 13px;
+   font-weight: 600;
+   color: #8a8ba3;
+ }
+
+ .form fieldset label {
+   flex-direction: row;
+   align-items: center;
+   gap: 8px;
+   font-weight: 400;
+ }
+
+ .form button {
+   align-self: flex-start;
+   padding: 10px 24px;
+   font: inherit;
+   font-weight: 600;
+   color: #fff;
+   background-color: #4e75ff;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: background-color 0.2s ease;
+ }
+
+ .form button:hover {
+   background-color: #3a5ce0;
+ }
